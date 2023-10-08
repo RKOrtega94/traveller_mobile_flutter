@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:traveller_mobile_flutter/presentation/widgets/bottom_navigator_bar.dart';
 
 class MainLayout extends StatelessWidget {
@@ -10,14 +11,17 @@ class MainLayout extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     return Scaffold(
       extendBody: true,
+      backgroundColor: Theme.of(context).colorScheme.background,
       body: Container(
         width: size.width,
         height: size.height,
-        color: Colors.red,
+        child: child,
       ),
       bottomNavigationBar: AppBottomNavigationBar(
         currentIndex: 0,
-        onTap: (index) => {print(index)},
+        onTap: (index) => {
+          print(index),
+        },
       ),
     );
   }

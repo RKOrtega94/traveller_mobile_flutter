@@ -48,24 +48,30 @@ class _AppBottomNavigationBarState extends State<AppBottomNavigationBar>
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
-      animation: _animation,
-      builder: (context, child) => Container(
-        margin: const EdgeInsets.all(10),
-        height: 60,
-        decoration: BoxDecoration(
-          color: Colors.white.withOpacity(_animation.value),
-          borderRadius: BorderRadius.circular(20),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            IconButton(onPressed: (){}, icon: const Icon(Icons.home)),
-            IconButton(onPressed: () {}, icon: const Icon(Icons.home)),
-            IconButton(onPressed: () {}, icon: const Icon(Icons.home)),
-            IconButton(onPressed: () {}, icon: const Icon(Icons.home)),
-          ],
-        ),
-      )
-    );
+        animation: _animation,
+        builder: (context, child) => Material(
+              elevation: 10,
+              borderRadius: const BorderRadius.vertical(
+                top: Radius.circular(20),
+              ),
+              child: Container(
+                height: 60,
+                decoration: BoxDecoration(
+                  color: Colors.white.withOpacity(_animation.value),
+                  borderRadius: const BorderRadius.vertical(
+                    top: Radius.circular(20),
+                  ),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    IconButton(onPressed: () {}, icon: const Icon(Icons.home)),
+                    IconButton(onPressed: () {}, icon: const Icon(Icons.home)),
+                    IconButton(onPressed: () {}, icon: const Icon(Icons.home)),
+                    IconButton(onPressed: () {}, icon: const Icon(Icons.home)),
+                  ],
+                ),
+              ),
+            ));
   }
 }
