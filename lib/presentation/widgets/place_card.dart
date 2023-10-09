@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:traveller_mobile_flutter/core/constants/app_constants.dart';
 import 'package:traveller_mobile_flutter/presentation/widgets/stars_review.dart';
@@ -65,10 +67,10 @@ class AppPlaceCard extends StatelessWidget {
                   ),
                 ),
               ),
-              const Positioned(
+              Positioned(
                 bottom: 0,
                 right: 0,
-                child: AppStarsReview(),
+                child: AppStarsReview(Random().nextInt(5) + 1),
               ),
             ],
           ),

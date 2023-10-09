@@ -1,77 +1,64 @@
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:traveller_mobile_flutter/core/constants/app_constants.dart';
+import 'package:traveller_mobile_flutter/presentation/providers/app_page_provider.dart';
+import 'package:traveller_mobile_flutter/presentation/widgets/menu_icon_button.dart';
 
-class AppBottomNavigationBar extends StatefulWidget {
-  final int currentIndex;
-  final ValueChanged<int> onTap;
-  const AppBottomNavigationBar(
-      {super.key, required this.currentIndex, required this.onTap});
-
-  @override
-  State<AppBottomNavigationBar> createState() => _AppBottomNavigationBarState();
-}
-
-class _AppBottomNavigationBarState extends State<AppBottomNavigationBar>
-    with TickerProviderStateMixin {
-  late AnimationController _animationController;
-  late Animation<double> _animation;
+class AppBottomNavigationBar extends ConsumerWidget {
+  const AppBottomNavigationBar({super.key});
 
   @override
-  void initState() {
-    super.initState();
-
-    _animationController = AnimationController(
-      duration: const Duration(milliseconds: 2000),
-      vsync: this,
+  Widget build(BuildContext context, WidgetRef ref) {
+    final currentPage = ref.watch(selectedPage);
+    return Container(
+      width: MediaQuery.of(context).size.width,
+      height: 60,
+      decoration: const BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.vertical(
+          top: Radius.circular(20),
+        ),
+      ),
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 10),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            AppMenuIconButton(
+              Image.asset("$BASE_ICON_PATH/home.png"),
+              isSelected: currentPage == 0,
+              title: "Inicio",
+              onTap: () {
+                ref.read(selectedPage.notifier).state = 0;
+              },
+            ),
+            AppMenuIconButton(
+              Image.asset("$BASE_ICON_PATH/location.png"),
+              isSelected: currentPage == 1,
+              title: "Explorar",
+              onTap: () {
+                ref.read(selectedPage.notifier).state = 1;
+              },
+            ),
+            AppMenuIconButton(
+              Image.asset("$BASE_ICON_PATH/routes.png"),
+              isSelected: currentPage == 2,
+              title: "Rutas",
+              onTap: () {
+                ref.read(selectedPage.notifier).state = 2;
+              },
+            ),
+            AppMenuIconButton(
+              Image.asset("$BASE_ICON_PATH/favorite.png"),
+              isSelected: currentPage == 3,
+              title: "Favoritos",
+              onTap: () {
+                ref.read(selectedPage.notifier).state = 3;
+              },
+            ),
+          ],
+        ),
+      ),
     );
-
-    _animation = Tween<double>(begin: 0, end: 1).animate(_animationController);
-
-    _animationController.forward();
-  }
-
-  @override
-  void dispose() {
-    _animationController.dispose();
-    super.dispose();
-  }
-
-  @override
-  void didUpdateWidget(covariant AppBottomNavigationBar oldWidget) {
-    super.didUpdateWidget(oldWidget);
-
-    if (oldWidget.currentIndex != widget.currentIndex) {
-      _animationController.reset();
-      _animationController.forward();
-    }
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return AnimatedBuilder(
-        animation: _animation,
-        builder: (context, child) => Material(
-              elevation: 10,
-              borderRadius: const BorderRadius.vertical(
-                top: Radius.circular(20),
-              ),
-              child: Container(
-                height: 60,
-                decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(_animation.value),
-                  borderRadius: const BorderRadius.vertical(
-                    top: Radius.circular(20),
-                  ),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    IconButton(onPressed: () {}, icon: const Icon(Icons.home)),
-                    IconButton(onPressed: () {}, icon: const Icon(Icons.home)),
-                    IconButton(onPressed: () {}, icon: const Icon(Icons.home)),
-                    IconButton(onPressed: () {}, icon: const Icon(Icons.home)),
-                  ],
-                ),
-              ),
-            ));
   }
 }

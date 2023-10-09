@@ -11,6 +11,7 @@ class MostSearched extends StatelessWidget {
       height: 200,
       width: MediaQuery.of(context).size.width,
       child: ListView.builder(
+        shrinkWrap: true,
         scrollDirection: Axis.horizontal,
         padding: const EdgeInsets.symmetric(horizontal: 10),
         itemBuilder: (contex, index) => const AppPlaceCard(),

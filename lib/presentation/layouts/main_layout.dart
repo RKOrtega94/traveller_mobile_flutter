@@ -12,17 +12,12 @@ class MainLayout extends StatelessWidget {
     return Scaffold(
       extendBody: true,
       backgroundColor: Theme.of(context).colorScheme.background,
-      body: Container(
+      body: SizedBox(
         width: size.width,
         height: size.height,
         child: child,
       ),
-      bottomNavigationBar: AppBottomNavigationBar(
-        currentIndex: 0,
-        onTap: (index) => {
-          print(index),
-        },
-      ),
+      bottomNavigationBar: const AppBottomNavigationBar(),
     );
   }
 }
