@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:traveller_mobile_flutter/core/constants/app_constants.dart';
-import 'package:traveller_mobile_flutter/presentation/providers/app_page_provider.dart';
+import 'package:traveller_mobile_flutter/providers/app_page_provider.dart';
 import 'package:traveller_mobile_flutter/presentation/widgets/menu_icon_button.dart';
 
 class AppBottomNavigationBar extends ConsumerWidget {

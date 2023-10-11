@@ -5,7 +5,7 @@ import 'package:traveller_mobile_flutter/presentation/pages/explore/explore_scre
 import 'package:traveller_mobile_flutter/presentation/pages/favorite/favorite_screen.dart';
 import 'package:traveller_mobile_flutter/presentation/pages/home/home_screen.dart';
 import 'package:traveller_mobile_flutter/presentation/pages/routes/routes_screen.dart';
-import 'package:traveller_mobile_flutter/presentation/providers/app_page_provider.dart';
+import 'package:traveller_mobile_flutter/providers/app_page_provider.dart';
 
 
 class MainScreen extends ConsumerWidget {

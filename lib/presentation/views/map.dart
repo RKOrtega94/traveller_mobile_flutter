@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:traveller_mobile_flutter/presentation/providers/app_position_provider.dart';
+import 'package:traveller_mobile_flutter/providers/app_position_provider.dart';
 
 class AppMap extends HookConsumerWidget {
   final List<Marker> markers;
