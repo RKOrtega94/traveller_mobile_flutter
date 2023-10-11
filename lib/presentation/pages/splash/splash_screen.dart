@@ -1,10 +1,8 @@
 import 'dart:async';
 
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:traveller_mobile_flutter/presentation/routes/app_router.gr.dart';
+import 'package:traveller_mobile_flutter/presentation/pages/main_screen.dart';
 
-@RoutePage()
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
@@ -31,7 +29,12 @@ class _SplashScreenState extends State<SplashScreen>
     _controller.forward();
 
     Timer(const Duration(seconds: 3), () {
-      AutoRouter.of(context).replace(const HomeRoute());
+      Navigator.pushAndRemoveUntil(
+          context,
+          MaterialPageRoute(
+            builder: (_) => const MainScreen(),
+          ),
+          (route) => false);
     });
   }
 
@@ -42,7 +45,7 @@ class _SplashScreenState extends State<SplashScreen>
       body: FadeTransition(
         opacity: _animation,
         child: Center(
-          child: Image.asset("assets/images/logo.png"),
+          child: Image.asset("assets/images/logo_dark.png"),
         ),
       ),
     );

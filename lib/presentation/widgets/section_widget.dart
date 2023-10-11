@@ -15,7 +15,7 @@ class AppSectionContainer extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(10.0),
             child: Text(
-              "$title",
+              title,
               style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                     fontSize: 22,
                     fontWeight: FontWeight.w800,

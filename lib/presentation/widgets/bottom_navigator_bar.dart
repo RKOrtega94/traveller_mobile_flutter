@@ -13,14 +13,14 @@ class AppBottomNavigationBar extends ConsumerWidget {
     return Container(
       width: MediaQuery.of(context).size.width,
       height: 60,
-      decoration: const BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.vertical(
+      decoration: BoxDecoration(
+        color: Theme.of(context).primaryColorDark,
+        borderRadius: const BorderRadius.vertical(
           top: Radius.circular(20),
         ),
       ),
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 10),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [

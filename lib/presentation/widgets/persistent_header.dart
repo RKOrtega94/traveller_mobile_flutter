@@ -48,7 +48,7 @@ class CustomHeaderDelegate extends SliverPersistentHeaderDelegate {
             padding: EdgeInsets.only(
               top: MediaQuery.of(context).padding.top,
             ),
-            color: Colors.white,
+            color: Theme.of(context).colorScheme.background,
             child: child,
           )
         : Container();

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class CitesSlider extends StatelessWidget {
-  const CitesSlider({super.key});
+class CitiesSlider extends StatelessWidget {
+  const CitiesSlider({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class CitesSlider extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 10),
             height: 20,
             decoration: BoxDecoration(
-              color: Colors.grey[200],
+              color: Theme.of(context).colorScheme.primary.withOpacity(0.2),
               borderRadius: BorderRadius.circular(10),
             ),
             child: Center(child: Text("Ciudad $index")),

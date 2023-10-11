@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:traveller_mobile_flutter/core/constants/app_constants.dart';
+import 'package:traveller_mobile_flutter/presentation/pages/profile/profile_screen.dart';
 import 'package:traveller_mobile_flutter/presentation/views/cities_slider.dart';
 import 'package:traveller_mobile_flutter/presentation/widgets/notification_button.dart';
 
@@ -11,7 +12,7 @@ class AppSliverAppbar extends StatelessWidget {
   Widget build(BuildContext context) {
     final baseHeight = MediaQuery.of(context).size.width * 0.65;
     return SliverAppBar(
-      expandedHeight: baseHeight > 300 ?  300 : baseHeight,
+      expandedHeight: baseHeight > 300 ? 300 : baseHeight,
       flexibleSpace: FlexibleSpaceBar(
         background: Stack(
           fit: StackFit.expand,
@@ -21,7 +22,7 @@ class AppSliverAppbar extends StatelessWidget {
               fit: BoxFit.cover,
               alignment: Alignment.centerRight,
               colorFilter: ColorFilter.mode(
-                Colors.white.withOpacity(0.5),
+                Theme.of(context).colorScheme.background.withOpacity(0.5),
                 BlendMode.darken,
               ),
             ),
@@ -30,7 +31,7 @@ class AppSliverAppbar extends StatelessWidget {
               fit: BoxFit.cover,
               alignment: Alignment.centerLeft,
               colorFilter: ColorFilter.mode(
-                Colors.white.withOpacity(0.5),
+                Theme.of(context).colorScheme.background.withOpacity(0.5),
                 BlendMode.darken,
               ),
             ),
@@ -38,8 +39,8 @@ class AppSliverAppbar extends StatelessWidget {
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
-                    Colors.white.withOpacity(0.5),
-                    Colors.white,
+                    Theme.of(context).colorScheme.background.withOpacity(0.5),
+                    Theme.of(context).colorScheme.background,
                   ],
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
@@ -65,13 +66,21 @@ class AppSliverAppbar extends StatelessWidget {
                         Expanded(
                           child: Row(
                             children: [
-                              ClipRRect(
-                                borderRadius: BorderRadius.circular(50),
-                                child: Image.network(
-                                  "https://picsum.photos/200/300",
-                                  height: 30,
-                                  width: 30,
-                                  fit: BoxFit.cover,
+                              InkWell(
+                                onTap: () => Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (_) => const ProfileScreen(),
+                                  ),
+                                ),
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(50),
+                                  child: Image.network(
+                                    "https://picsum.photos/200/300",
+                                    height: 30,
+                                    width: 30,
+                                    fit: BoxFit.cover,
+                                  ),
                                 ),
                               ),
                               const SizedBox(width: 10),
@@ -103,7 +112,7 @@ class AppSliverAppbar extends StatelessWidget {
                               ),
                         ),
                         Text(
-                          "Destino",
+                          "destino",
                           style: Theme.of(context)
                               .textTheme
                               .headlineMedium
@@ -121,7 +130,7 @@ class AppSliverAppbar extends StatelessWidget {
                           width: double.infinity,
                           height: 50,
                           decoration: BoxDecoration(
-                            color: Colors.white,
+                            color: Theme.of(context).colorScheme.surface,
                             borderRadius: BorderRadius.circular(10),
                             boxShadow: [
                               BoxShadow(
@@ -162,7 +171,7 @@ class AppSliverAppbar extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(height: 10),
-                        const CitesSlider(),
+                        const CitiesSlider(),
                       ],
                     ),
                   ],
