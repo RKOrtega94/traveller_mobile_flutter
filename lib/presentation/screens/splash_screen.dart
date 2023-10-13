@@ -1,16 +1,18 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:traveller_mobile_flutter/presentation/provider/app_dark_mode_provider.dart';
 import 'package:traveller_mobile_flutter/presentation/screens/main_screen.dart';
 
-class SplashScreen extends StatefulWidget {
+class SplashScreen extends ConsumerStatefulWidget {
   const SplashScreen({super.key});
 
   @override
-  State<SplashScreen> createState() => _SplashScreenState();
+  ConsumerState<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen>
+class _SplashScreenState extends ConsumerState<SplashScreen>
     with SingleTickerProviderStateMixin {
   late final AnimationController _controller;
   late final Animation<double> _animation;
@@ -40,12 +42,15 @@ class _SplashScreenState extends State<SplashScreen>
 
   @override
   Widget build(BuildContext context) {
+    final AsyncValue<bool> darkMode = ref.watch(darkModeProvider);
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
       body: FadeTransition(
         opacity: _animation,
         child: Center(
-          child: Image.asset("assets/images/logo_dark.png"),
+          child: darkMode.value ?? false
+              ? Image.asset("assets/images/logo_dark.png")
+              : Image.asset("assets/images/logo.png"),
         ),
       ),
     );

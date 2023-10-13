@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:traveller_mobile_flutter/presentation/layouts/main_layout.dart';
 import 'package:traveller_mobile_flutter/presentation/provider/app_menu_index_provider.dart';
-import 'package:traveller_mobile_flutter/presentation/views/home_view.dart';
+import 'package:traveller_mobile_flutter/presentation/views/home/home_view.dart';
 
 class MainScreen extends ConsumerWidget {
   const MainScreen({

@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
 
 class AppButton extends StatelessWidget {
+  final String label;
   final Widget? icon;
-  final String text;
-  final void Function() onPressed;
-  const AppButton(
-    this.text, {
+  const AppButton({
     super.key,
+    required this.label,
     this.icon,
-    required this.onPressed,
   });
 
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) => SizedBox(
-        width: 
+        width: constraints.maxWidth == double.infinity
+            ? MediaQuery.of(context).size.width * 0.90
+            : constraints.maxWidth,
         child: ElevatedButton(
-          onPressed: onPressed,
+          onPressed: () {},
           child: Container(
             width: constraints.maxWidth == double.infinity
                 ? MediaQuery.of(context).size.width * 0.90
@@ -29,15 +29,12 @@ class AppButton extends StatelessWidget {
                   ? MainAxisAlignment.center
                   : MainAxisAlignment.start,
               children: [
-                if (icon != null)
-                  Row(
-                    children: [
-                      icon!,
-                      const SizedBox(width: 5),
-                    ],
-                  ),
+                if (icon != null) ...[
+                  icon!,
+                  const SizedBox(width: 5),
+                ],
                 Text(
-                  text,
+                  label,
                   style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                         fontWeight: FontWeight.bold,
                       ),
