@@ -1,23 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:traveller_mobile_flutter/presentation/widgets/bottom_navigator.dart';
 
-import 'package:traveller_mobile_flutter/presentation/widgets/bottom_navigator_bar.dart';
-
-class MainLayout extends StatelessWidget {
+class AppMainLayout extends StatelessWidget {
   final Widget child;
-  const MainLayout({super.key, required this.child});
+  const AppMainLayout({
+    super.key,
+    required this.child,
+  });
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     return Scaffold(
       extendBody: true,
       backgroundColor: Theme.of(context).colorScheme.background,
+      bottomNavigationBar: AppBottomNavigatorBar(),
       body: SizedBox(
-        width: size.width,
-        height: size.height,
-        child: child,
+        width: double.infinity,
+        height: double.infinity,
+        child: Center(
+          child: child,
+        ),
       ),
-      bottomNavigationBar: const AppBottomNavigationBar(),
     );
   }
 }

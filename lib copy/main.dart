@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:traveller_mobile_flutter/core/theme.dart';
-import 'package:traveller_mobile_flutter/presentation/screens/splash_screen.dart';
+import 'package:traveller_mobile_flutter/core/app/theme.dart';
+import 'package:traveller_mobile_flutter/presentation/notifiers/app_theme_notifier.dart';
+import 'package:traveller_mobile_flutter/presentation/pages/splash/splash_screen.dart';
+
+part 'main.g.dart';
 
 void main() {
   runApp(const ProviderScope(
@@ -15,10 +18,13 @@ class MyApp extends ConsumerWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final theme = ref.watch(themeProvider);
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      theme: theme,
+      theme: lightTheme,
+      darkTheme: darkTheme,
+      themeMode: theme,
       home: const SplashScreen(),
     );
   }
