@@ -33,7 +33,8 @@ ThemeData darkTheme = ThemeData(
     brightness: Brightness.dark,
     primary: Color(0xFF0061A4),
     secondary: Color(0xFF3383B0),
-    surface: Color(0xFF121212),
+    // Surface color gray 700
+    surface: Color(0xFF303030),
     background: Color(0xFF121212),
     error: Color(0xFFCF6679),
     onPrimary: Color(0xFFFFFFFF),

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:traveller_mobile_flutter/presentation/screens/detail_screen.dart';
-import 'package:traveller_mobile_flutter/presentation/views/activity_detail_view.dart';
+import 'package:traveller_mobile_flutter/presentation/views/activities/activity_detail_view.dart';
 
 class ActivitiesHorizontal extends StatelessWidget {
   const ActivitiesHorizontal({super.key});
@@ -21,9 +20,7 @@ class ActivitiesHorizontal extends StatelessWidget {
               onTap: () => Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (_) => const DetailScreen(
-                    child: ActivityDetailView(),
-                  ),
+                  builder: (_) => const ActivityDetailView(),
                 ),
               ),
               child: Container(

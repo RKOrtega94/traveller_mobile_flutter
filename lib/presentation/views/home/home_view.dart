@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:traveller_mobile_flutter/presentation/views/activities/horizontal_activities.dart';
+import 'package:traveller_mobile_flutter/presentation/views/destinations/horizontal_destinations.dart';
 import 'package:traveller_mobile_flutter/presentation/views/home/components/home_appbar.dart';
+import 'package:traveller_mobile_flutter/presentation/views/post/last_post.dart';
 import 'package:traveller_mobile_flutter/presentation/widgets/section.dart';
 
 class HomeView extends StatelessWidget {
@@ -23,6 +25,14 @@ class HomeView extends StatelessWidget {
                   AppSection(
                     title: "Actividades",
                     child: ActivitiesHorizontal(),
+                  ),
+                  AppSection(
+                    title: "Destinos",
+                    child: DestinationsHorizontal(),
+                  ),
+                  AppSection(
+                    title: "Últimos post",
+                    child: LastPost(),
                   ),
                 ],
               ),

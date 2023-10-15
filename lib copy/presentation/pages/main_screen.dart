@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:traveller_mobile_flutter/presentation/layouts/main_layout.dart';
 import 'package:traveller_mobile_flutter/presentation/pages/explore/explore_screen.dart';
 import 'package:traveller_mobile_flutter/presentation/pages/favorite/favorite_screen.dart';
 import 'package:traveller_mobile_flutter/presentation/pages/home/home_screen.dart';

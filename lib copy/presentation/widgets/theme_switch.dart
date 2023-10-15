@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:traveller_mobile_flutter/core/constants/app_constants.dart';
 import 'package:traveller_mobile_flutter/presentation/notifiers/app_theme_notifier.dart';
 

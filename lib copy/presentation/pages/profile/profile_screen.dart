@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:traveller_mobile_flutter/core/constants/app_constants.dart';
-import 'package:traveller_mobile_flutter/presentation/layouts/page_layout.dart';
 import 'package:traveller_mobile_flutter/presentation/pages/profile/edit_profile.dart';
 import 'package:traveller_mobile_flutter/presentation/views/avatar.dart';
 import 'package:traveller_mobile_flutter/presentation/widgets/buttom_widget.dart';

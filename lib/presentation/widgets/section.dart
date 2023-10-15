@@ -13,7 +13,7 @@ class AppSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: MediaQuery.of(context).size.width,
       child: Column(
         children: [
@@ -50,7 +50,7 @@ class AppSection extends StatelessWidget {
                 ),
             ],
           ),
-          const SizedBox(height: 10),
+          const SizedBox(height: 2),
           child,
         ],
       ),
