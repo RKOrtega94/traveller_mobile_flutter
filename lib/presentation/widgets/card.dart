@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:traveller_mobile_flutter/presentation/screens/destination_screen.dart';
 import 'package:traveller_mobile_flutter/presentation/widgets/review_stars.dart';
 
 class AppCard extends StatelessWidget {
@@ -63,31 +64,41 @@ class AppCard extends StatelessWidget {
                       width: 10,
                     ),
                     Expanded(
-                      child: Container(
-                        padding: const EdgeInsets.all(10),
-                        width: double.infinity,
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                          color: Colors.white54,
-                          borderRadius: BorderRadius.circular(10),
-                          border: Border.all(
-                            color: Colors.white,
-                            width: 1,
+                      child: GestureDetector(
+                        onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => const DestinationScreen(),
                           ),
                         ),
-                        child: LayoutBuilder(builder: (context, constraints) {
-                          return Text(
-                            "Explorar",
-                            style: Theme.of(context)
-                                .textTheme
-                                .titleMedium
-                                ?.copyWith(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: constraints.maxWidth * 0.15,
-                                ),
-                          );
-                        }),
+                        child: Container(
+                          padding: const EdgeInsets.all(10),
+                          width: double.infinity,
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            color: Colors.white54,
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all(
+                              color: Colors.white,
+                              width: 1,
+                            ),
+                          ),
+                          child: LayoutBuilder(
+                            builder: (context, constraints) {
+                              return Text(
+                                "Explorar",
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .titleMedium
+                                    ?.copyWith(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: constraints.maxWidth * 0.15,
+                                    ),
+                              );
+                            },
+                          ),
+                        ),
                       ),
                     ),
                   ],

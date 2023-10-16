@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:traveller_mobile_flutter/core/constants.dart';
-import 'package:traveller_mobile_flutter/presentation/provider/app_menu_index_provider.dart';
+import 'package:traveller_mobile_flutter/presentation/provider/_app_providers.dart';
 
 class AppBottomNavigatorBar extends ConsumerWidget {
   AppBottomNavigatorBar({super.key});
@@ -19,13 +19,20 @@ class AppBottomNavigatorBar extends ConsumerWidget {
     ),
     MenuItemModel(
       index: 2,
+      label: "Blog",
+      iconPath: "blog.png",
+    ),
+    MenuItemModel(
+      index: 3,
       label: 'Favoritos',
       iconPath: 'favorite.png',
     ),
   ];
 
   Widget _buildItem(BuildContext context,
-          {required bool isSelected, required MenuItemModel model, required Function(int) onClick}) =>
+          {required bool isSelected,
+          required MenuItemModel model,
+          required Function(int) onClick}) =>
       InkWell(
         onTap: () => onClick(model.index),
         child: Material(
@@ -85,7 +92,8 @@ class AppBottomNavigatorBar extends ConsumerWidget {
                     context,
                     isSelected: e.index == menuIndex,
                     model: e,
-                    onClick: (index) => ref.read(menuIndexProvider.notifier).setIndex(index),
+                    onClick: (index) =>
+                        ref.read(menuIndexProvider.notifier).setIndex(index),
                   ))
               .toList(),
         ),

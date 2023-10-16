@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:traveller_mobile_flutter/core/constants.dart';
-import 'package:traveller_mobile_flutter/presentation/provider/app_dark_mode_provider.dart';
+import 'package:traveller_mobile_flutter/presentation/provider/_app_providers.dart';
 import 'package:traveller_mobile_flutter/presentation/widgets/icon_button.dart';
 
 class CarouselHeader extends StatelessWidget {
@@ -166,16 +166,64 @@ class DetailHeader extends ConsumerWidget {
                         ),
                         alignment: Alignment.centerLeft,
                         padding: const EdgeInsets.symmetric(horizontal: 10),
-                        child: Text(
-                          "Place description",
-                          style: Theme.of(context)
-                              .textTheme
-                              .headlineMedium
-                              ?.copyWith(
-                                color:
-                                    Theme.of(context).colorScheme.onBackground,
-                                fontWeight: FontWeight.bold,
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            const CircleAvatar(
+                              backgroundImage: NetworkImage(
+                                // Random image
+                                "https://picsum.photos/200",
                               ),
+                              backgroundColor: Colors.white,
+                            ),
+                            const SizedBox(width: 10),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    "John Doe",
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .titleMedium
+                                        ?.copyWith(
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                  ),
+                                  Text(
+                                    "Hace 2 horas",
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .bodySmall
+                                        ?.copyWith(
+                                          color: Theme.of(context)
+                                              .colorScheme
+                                              .onBackground
+                                              .withOpacity(0.5),
+                                        ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            const SizedBox(width: 10),
+                            TextButton(
+                              onPressed: () {},
+                              child: const Row(
+                                children: [
+                                  Icon(
+                                    Icons.add,
+                                  ),
+                                  SizedBox(
+                                    width: 2.5,
+                                  ),
+                                  Text(
+                                    "Seguir",
+                                  )
+                                ],
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ),

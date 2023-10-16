@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:traveller_mobile_flutter/presentation/layouts/main_layout.dart';
-import 'package:traveller_mobile_flutter/presentation/provider/app_menu_index_provider.dart';
+import 'package:traveller_mobile_flutter/presentation/provider/_app_providers.dart';
 import 'package:traveller_mobile_flutter/presentation/views/home/home_view.dart';
+import 'package:traveller_mobile_flutter/presentation/views/map/map_view.dart';
 
 class MainScreen extends ConsumerWidget {
   const MainScreen({
@@ -11,7 +12,7 @@ class MainScreen extends ConsumerWidget {
 
   final List<Widget> _pages = const <Widget>[
     HomeView(),
-    Placeholder(),
+    MapView(),
     Placeholder(),
     Placeholder(),
   ];

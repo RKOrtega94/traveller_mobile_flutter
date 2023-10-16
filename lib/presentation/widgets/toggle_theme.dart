@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:traveller_mobile_flutter/core/constants.dart';
-import 'package:traveller_mobile_flutter/presentation/provider/app_dark_mode_provider.dart';
+import 'package:traveller_mobile_flutter/presentation/provider/_app_providers.dart';
 
 class AppToggleTheme extends ConsumerWidget {
   const AppToggleTheme({super.key});
