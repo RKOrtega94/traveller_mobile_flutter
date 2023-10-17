@@ -1,0 +1,15 @@
+[
+  {
+    "id": "1",
+    "name": "Caminata",
+    "description": "Paseos largos o cortos por senderos o caminos de tierra.",
+    "images": [
+      "https://i.ibb.co/0jZQY5q/caminata.jpg",
+      "https://i.ibb.co/0jZQY5q/caminata.jpg",
+      "https://i.ibb.co/0jZQY5q/caminata.jpg"
+    ],
+    "is_active": true,
+    "created_at": "2021-05-10T17:00:00.000000Z",
+    "updated_at": "2021-05-10T17:00:00.000000Z"
+  }
+]
