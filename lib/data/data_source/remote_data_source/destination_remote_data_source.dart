@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:traveller_mobile_flutter/data/api/api.dart';
+import 'package:traveller_mobile_flutter/data/source/api.dart';
 
 class DestinationRemoteDataSource {
   final _api = Api();
