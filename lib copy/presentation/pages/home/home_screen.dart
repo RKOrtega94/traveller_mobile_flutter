@@ -18,7 +18,7 @@ class HomeScreen extends StatelessWidget {
       body: Builder(
         builder: (context) => CustomScrollView(
           slivers: [
-            SliverOverlapAbsorber(
+            SliverOverlapAbsorber(9
               handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
               sliver: const AppPersistentHeader(),
             ),
