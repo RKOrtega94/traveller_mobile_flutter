@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
+
 import 'package:traveller_mobile_flutter/presentation/components/category/categories_list.dart';
-import 'package:traveller_mobile_flutter/presentation/views/activities/horizontal_activities.dart';
-import 'package:traveller_mobile_flutter/presentation/views/destinations/horizontal_destinations.dart';
 import 'package:traveller_mobile_flutter/presentation/views/home/components/home_appbar.dart';
 import 'package:traveller_mobile_flutter/presentation/views/home/components/home_persistent_header.dart';
-import 'package:traveller_mobile_flutter/presentation/views/post/last_post.dart';
 import 'package:traveller_mobile_flutter/presentation/widgets/section.dart';
 
 class HomeView extends StatelessWidget {

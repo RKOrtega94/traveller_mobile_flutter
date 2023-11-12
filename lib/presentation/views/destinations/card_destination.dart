@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:traveller_mobile_flutter/presentation/widgets/card.dart';
 
 class CardDestination extends StatelessWidget {
   const CardDestination({super.key});
