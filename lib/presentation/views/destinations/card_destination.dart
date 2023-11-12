@@ -12,7 +12,7 @@ class CardDestination extends StatelessWidget {
         width: constraints.maxWidth == double.infinity
             ? constraints.maxHeight * 1.5
             : constraints.maxWidth,
-        child: const AppCard(),
+        child: const Placeholder(),
       ),
     );
   }

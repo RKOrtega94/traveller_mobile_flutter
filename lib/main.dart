@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:traveller_mobile_flutter/core/theme.dart';
-import 'package:traveller_mobile_flutter/infraestructure/source/data_base.dart';
+import 'package:traveller_mobile_flutter/infrastructure/source/data_base.dart';
 import 'package:traveller_mobile_flutter/presentation/provider/_app_providers.dart';
 import 'package:traveller_mobile_flutter/presentation/screens/splash_screen.dart';
 

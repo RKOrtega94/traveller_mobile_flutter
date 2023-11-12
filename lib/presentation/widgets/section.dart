@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 class AppSection extends StatelessWidget {
-  final String title;
+  final String? title;
   final Widget? route;
   final Widget child;
   const AppSection({
     super.key,
-    required this.title,
+    this.title,
     this.route,
     required this.child,
   });
@@ -21,12 +21,18 @@ class AppSection extends StatelessWidget {
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                title,
-                style: Theme.of(context)
-                    .textTheme
-                    .titleSmall
-                    ?.copyWith(fontWeight: FontWeight.bold),
+              Visibility(
+                visible: title != null,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  child: Text(
+                    title ?? "Sin título",
+                    style: Theme.of(context)
+                        .textTheme
+                        .titleSmall
+                        ?.copyWith(fontWeight: FontWeight.bold),
+                  ),
+                ),
               ),
               if (route != null)
                 GestureDetector(

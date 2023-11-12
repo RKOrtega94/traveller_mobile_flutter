@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:traveller_mobile_flutter/presentation/components/category/categories_list.dart';
 import 'package:traveller_mobile_flutter/presentation/views/activities/horizontal_activities.dart';
 import 'package:traveller_mobile_flutter/presentation/views/destinations/horizontal_destinations.dart';
 import 'package:traveller_mobile_flutter/presentation/views/home/components/home_appbar.dart';
@@ -23,26 +24,25 @@ class HomeView extends StatelessWidget {
               sliver: const HomePersistentHeader(),
             ),
             const SliverToBoxAdapter(
-              child: Padding(
-                padding: EdgeInsets.all(10.0),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    AppSection(
-                      title: "Actividades",
-                      child: ActivitiesHorizontal(),
-                    ),
-                    AppSection(
-                      title: "Destinos",
-                      child: DestinationsHorizontal(),
-                    ),
-                    AppSection(
-                      title: "Últimos post",
-                      child: LastPost(),
-                    ),
-                    SizedBox(height: 65),
-                  ],
-                ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  AppSection(
+                    child: CategoriesListComponent(),
+                  )
+                  /* AppSection(
+                    child: ActivitiesHorizontal(),
+                  ),
+                  AppSection(
+                    title: "Destinos",
+                    child: DestinationsHorizontal(),
+                  ),
+                  AppSection(
+                    title: "Últimos post",
+                    child: LastPost(),
+                  ),
+                  SizedBox(height: 65), */
+                ],
               ),
             ),
           ],

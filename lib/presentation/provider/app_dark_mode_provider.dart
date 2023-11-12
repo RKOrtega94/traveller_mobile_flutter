@@ -1,5 +1,5 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:traveller_mobile_flutter/infraestructure/storage/app_storage.dart';
+import 'package:traveller_mobile_flutter/infrastructure/storage/app_storage.dart';
 
 part 'app_dark_mode_provider.g.dart';
 

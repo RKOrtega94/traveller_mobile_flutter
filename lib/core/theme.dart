@@ -44,3 +44,8 @@ ThemeData darkTheme = ThemeData(
     onError: Color(0xFF000000),
   ),
 );
+
+class AppTheme {
+  static ThemeData get light => lightTheme;
+  static ThemeData get dark => darkTheme;
+}
