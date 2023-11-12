@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:traveller_mobile_flutter/core/theme.dart';
 import 'package:traveller_mobile_flutter/infraestructure/source/data_base.dart';
 import 'package:traveller_mobile_flutter/presentation/provider/_app_providers.dart';
-import 'package:traveller_mobile_flutter/presentation/screens/auth_screen.dart';
+import 'package:traveller_mobile_flutter/presentation/screens/splash_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -28,7 +28,7 @@ class MyApp extends ConsumerWidget {
       theme: lightTheme,
       darkTheme: darkTheme,
       themeMode: darkMode.value ?? false ? ThemeMode.dark : ThemeMode.light,
-      home: const AuthScreen(),
+      home: const SplashScreen(),
     );
   }
 }

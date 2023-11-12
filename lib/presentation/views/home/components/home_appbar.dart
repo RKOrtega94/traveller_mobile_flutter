@@ -19,11 +19,6 @@ class HomeAppbar extends StatelessWidget {
               fit: BoxFit.cover,
               alignment: Alignment.centerRight,
             ),
-            SvgPicture.asset(
-              "$baseIconPath/ec_map.svg",
-              fit: BoxFit.cover,
-              alignment: Alignment.centerLeft,
-            ),
             Container(
               decoration: BoxDecoration(
                 gradient: LinearGradient(
