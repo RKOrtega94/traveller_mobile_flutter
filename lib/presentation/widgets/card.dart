@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:traveller_mobile_flutter/core/constants.dart';
 import 'package:traveller_mobile_flutter/presentation/view_models/app_card_view_model.dart';
 
 class AppCard extends StatelessWidget {

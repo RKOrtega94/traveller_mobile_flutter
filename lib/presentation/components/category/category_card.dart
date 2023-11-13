@@ -9,8 +9,14 @@ class CategoryCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Widget child = Padding(
-      padding: const EdgeInsets.all(8.0),
+    final Widget child = ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
+        padding: const EdgeInsets.all(10),
+      ),
+      onPressed: () => viewModel.onTap,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [

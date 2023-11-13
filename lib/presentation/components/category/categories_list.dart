@@ -28,11 +28,6 @@ class CategoriesListComponent extends ConsumerWidget {
 
     final List<Category> categoriesList = categories.value ?? [];
 
-    final CategoryCardViewModel viewModel = CategoryCardViewModel(
-      category: categoriesList.first,
-      onTap: () {},
-    );
-
     return Visibility(
       visible: categoriesList.isNotEmpty,
       replacement: const Center(
@@ -47,7 +42,11 @@ class CategoriesListComponent extends ConsumerWidget {
           children: categoriesList
               .map(
                 (category) => CategoryCard(
-                  viewModel: viewModel,
+                  key: ValueKey(category.id),
+                  viewModel: CategoryCardViewModel(
+                    category: category,
+                    onTap: () {},
+                  ),
                 ),
               )
               .toList(),
