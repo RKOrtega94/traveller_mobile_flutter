@@ -46,6 +46,7 @@ dependencies:
   freezed: ^2.4.5
   dio: ^5.3.3
   sqflite: ^2.3.0
+  shimmer: ^3.0.0
 
 dev_dependencies:
   flutter_test:
@@ -81,6 +82,7 @@ flutter:
   assets:
     - assets/icons/
     - assets/images/
+    - assets/categories_icons/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

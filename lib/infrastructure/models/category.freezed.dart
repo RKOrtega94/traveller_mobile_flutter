@@ -23,7 +23,7 @@ mixin _$Category {
   int? get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
-  List<String> get images => throw _privateConstructorUsedError;
+  String get image => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -36,7 +36,7 @@ abstract class $CategoryCopyWith<$Res> {
   factory $CategoryCopyWith(Category value, $Res Function(Category) then) =
       _$CategoryCopyWithImpl<$Res, Category>;
   @useResult
-  $Res call({int? id, String name, String description, List<String> images});
+  $Res call({int? id, String name, String description, String image});
 }
 
 /// @nodoc
@@ -55,7 +55,7 @@ class _$CategoryCopyWithImpl<$Res, $Val extends Category>
     Object? id = freezed,
     Object? name = null,
     Object? description = null,
-    Object? images = null,
+    Object? image = null,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -70,10 +70,10 @@ class _$CategoryCopyWithImpl<$Res, $Val extends Category>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
-      images: null == images
-          ? _value.images
-          : images // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+      image: null == image
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -86,7 +86,7 @@ abstract class _$$CategoryImplCopyWith<$Res>
       __$$CategoryImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int? id, String name, String description, List<String> images});
+  $Res call({int? id, String name, String description, String image});
 }
 
 /// @nodoc
@@ -103,7 +103,7 @@ class __$$CategoryImplCopyWithImpl<$Res>
     Object? id = freezed,
     Object? name = null,
     Object? description = null,
-    Object? images = null,
+    Object? image = null,
   }) {
     return _then(_$CategoryImpl(
       id: freezed == id
@@ -118,10 +118,10 @@ class __$$CategoryImplCopyWithImpl<$Res>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
-      images: null == images
-          ? _value._images
-          : images // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+      image: null == image
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -133,8 +133,7 @@ class _$CategoryImpl implements _Category {
       {this.id,
       required this.name,
       required this.description,
-      required final List<String> images})
-      : _images = images;
+      required this.image});
 
   factory _$CategoryImpl.fromJson(Map<String, dynamic> json) =>
       _$$CategoryImplFromJson(json);
@@ -145,17 +144,12 @@ class _$CategoryImpl implements _Category {
   final String name;
   @override
   final String description;
-  final List<String> _images;
   @override
-  List<String> get images {
-    if (_images is EqualUnmodifiableListView) return _images;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_images);
-  }
+  final String image;
 
   @override
   String toString() {
-    return 'Category(id: $id, name: $name, description: $description, images: $images)';
+    return 'Category(id: $id, name: $name, description: $description, image: $image)';
   }
 
   @override
@@ -167,13 +161,12 @@ class _$CategoryImpl implements _Category {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.description, description) ||
                 other.description == description) &&
-            const DeepCollectionEquality().equals(other._images, _images));
+            (identical(other.image, image) || other.image == image));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, description,
-      const DeepCollectionEquality().hash(_images));
+  int get hashCode => Object.hash(runtimeType, id, name, description, image);
 
   @JsonKey(ignore: true)
   @override
@@ -194,7 +187,7 @@ abstract class _Category implements Category {
       {final int? id,
       required final String name,
       required final String description,
-      required final List<String> images}) = _$CategoryImpl;
+      required final String image}) = _$CategoryImpl;
 
   factory _Category.fromJson(Map<String, dynamic> json) =
       _$CategoryImpl.fromJson;
@@ -206,7 +199,7 @@ abstract class _Category implements Category {
   @override
   String get description;
   @override
-  List<String> get images;
+  String get image;
   @override
   @JsonKey(ignore: true)
   _$$CategoryImplCopyWith<_$CategoryImpl> get copyWith =>

@@ -29,23 +29,7 @@ class AppCard extends StatelessWidget {
         height: card.height ?? double.infinity,
         child: Align(
           alignment: Alignment.centerLeft,
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Image.asset(
-                  '$baseIconPath/sunny.png',
-                ),
-                const SizedBox(
-                  width: 5,
-                ),
-                const Text(
-                  "Parques",
-                ),
-              ],
-            ),
-          ),
+          child: card.child,
         ),
       ),
     );

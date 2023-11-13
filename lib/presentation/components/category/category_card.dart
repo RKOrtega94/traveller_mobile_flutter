@@ -1,18 +1,40 @@
 import 'package:flutter/material.dart';
 import 'package:traveller_mobile_flutter/presentation/view_models/app_card_view_model.dart';
+import 'package:traveller_mobile_flutter/presentation/view_models/category_card_view_model.dart';
 import 'package:traveller_mobile_flutter/presentation/widgets/card.dart';
 
 class CategoryCard extends StatelessWidget {
-  const CategoryCard({super.key});
+  final CategoryCardViewModel viewModel;
+  const CategoryCard({super.key, required this.viewModel});
 
   @override
   Widget build(BuildContext context) {
-    return const AppCard(
-      card: AppCardViewModel(
-        width: 120,
-        height: 120 / 2.5,
-        child: Placeholder(),
+    final Widget child = Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Image.asset(
+            viewModel.category.image,
+          ),
+          const SizedBox(
+            width: 5,
+          ),
+          Text(
+            viewModel.category.name,
+          ),
+        ],
       ),
+    );
+
+    final AppCardViewModel cardViewModel = AppCardViewModel(
+      child: child,
+      width: viewModel.width,
+      height: viewModel.height,
+    );
+
+    return AppCard(
+      card: cardViewModel,
     );
   }
 }
