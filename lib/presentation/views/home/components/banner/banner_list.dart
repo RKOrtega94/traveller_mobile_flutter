@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:traveller_mobile_flutter/infrastructure/models/banner.dart';
 import 'package:traveller_mobile_flutter/presentation/components/skeletons/loading_animated_card.dart';
 import 'package:traveller_mobile_flutter/presentation/provider/banner_provider.dart';
+import 'package:traveller_mobile_flutter/presentation/views/home/components/banner/banner_page_view.dart';
 
 class BannerList extends ConsumerWidget {
   const BannerList({super.key});
@@ -29,15 +30,8 @@ class BannerList extends ConsumerWidget {
             height: constraints.maxWidth * 0.5,
             child: ClipRRect(
               borderRadius: BorderRadius.circular(10),
-              child: PageView(
-                children: banners.value!
-                    .map(
-                      (banner) => Image.asset(
-                        banner.image,
-                        fit: BoxFit.cover,
-                      ),
-                    )
-                    .toList(),
+              child: BannerPageView(
+                banners: banners.value ?? [],
               ),
             ),
           ),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:traveller_mobile_flutter/presentation/components/banner/banner_list.dart';
+import 'package:traveller_mobile_flutter/presentation/views/home/components/banner/banner_list.dart';
 
 import 'package:traveller_mobile_flutter/presentation/components/category/categories_list.dart';
 import 'package:traveller_mobile_flutter/presentation/views/home/components/home_appbar.dart';
