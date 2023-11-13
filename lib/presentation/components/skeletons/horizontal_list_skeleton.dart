@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:traveller_mobile_flutter/presentation/components/skeletons/loaing_animated_card.dart';
+import 'package:traveller_mobile_flutter/presentation/components/skeletons/loading_animated_card.dart';
 
 class AppHorizontalListSkeleton extends StatelessWidget {
   final double height; // main height

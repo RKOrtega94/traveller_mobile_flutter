@@ -17,7 +17,7 @@ class HomeAppbar extends StatelessWidget {
             SvgPicture.asset(
               "$baseIconPath/ec_map.svg",
               fit: BoxFit.cover,
-              alignment: Alignment.centerRight,
+              alignment: Alignment.center,
             ),
             Container(
               decoration: BoxDecoration(
@@ -32,9 +32,11 @@ class HomeAppbar extends StatelessWidget {
               ),
             ),
             Positioned.fill(
-              child: Padding(
-                padding: EdgeInsets.symmetric(
-                  vertical: MediaQuery.of(context).padding.top,
+              child: Container(
+                margin: EdgeInsets.only(
+                  top: MediaQuery.of(context).padding.top,
+                ),
+                padding: const EdgeInsets.symmetric(
                   horizontal: 20,
                 ),
                 child: Column(
