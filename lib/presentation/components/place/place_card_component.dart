@@ -21,6 +21,11 @@ class PlaceCard extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10),
                   child: Image.network(
                     place.images[0],
+                    errorBuilder: (context, error, stackTrace) => Center(
+                      child: Container(
+                        color: Colors.grey,
+                      ),
+                    ),
                     fit: BoxFit.cover,
                   ),
                 ),

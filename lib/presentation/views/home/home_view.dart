@@ -4,7 +4,8 @@ import 'package:traveller_mobile_flutter/presentation/views/home/components/bann
 import 'package:traveller_mobile_flutter/presentation/components/category/categories_list.dart';
 import 'package:traveller_mobile_flutter/presentation/views/home/components/home_appbar.dart';
 import 'package:traveller_mobile_flutter/presentation/views/home/components/home_persistent_header.dart';
-import 'package:traveller_mobile_flutter/presentation/views/home/components/places/recent_places.dart';
+import 'package:traveller_mobile_flutter/presentation/views/home/components/places/places_list.dart';
+import 'package:traveller_mobile_flutter/presentation/views/home/components/places/pupular_places.dart';
 import 'package:traveller_mobile_flutter/presentation/widgets/section.dart';
 
 class HomeView extends StatelessWidget {
@@ -12,6 +13,8 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double screenHeight = MediaQuery.of(context).size.height;
+    debugPrint("screenHeight: $screenHeight");
     return NestedScrollView(
       headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) => [
         const HomeAppbar(),
@@ -23,20 +26,28 @@ class HomeView extends StatelessWidget {
               handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
               sliver: const HomePersistentHeader(),
             ),
-            const SliverToBoxAdapter(
+            SliverToBoxAdapter(
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  AppSection(
+                  const AppSection(
                     child: CategoriesListComponent(),
                   ),
-                  AppSection(
+                  const AppSection(
                     child: BannerList(),
                   ),
-                  SizedBox(height: 10),
-                  AppSection(
+                  const SizedBox(height: 10),
+                  const AppSection(
                     title: "Destinos populares en Quito",
                     child: PopularPlaces(),
+                  ),
+                  const SizedBox(height: 10),
+                  AppSection(
+                    title: "Más lugares en Quito",
+                    child: SizedBox(
+                      height: screenHeight,
+                      child: const PlacesList(),
+                    ),
                   )
                   /* AppSection(
                     child: ActivitiesHorizontal(),
