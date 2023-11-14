@@ -6,6 +6,7 @@ class CategoryLocalDataSource extends ICategoryDataSource {
 
   @override
   Future<List<Map<String, dynamic>>> getCategories() async {
+    await Future.delayed(const Duration(seconds: 2));
     return Future.value(categoryData);
   }
 }

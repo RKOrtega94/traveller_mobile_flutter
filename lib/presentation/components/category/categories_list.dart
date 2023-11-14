@@ -20,12 +20,6 @@ class CategoriesListComponent extends ConsumerWidget {
       );
     }
 
-    if (categories is AsyncError) {
-      return const Center(
-        child: Text("Error"),
-      );
-    }
-
     final List<Category> categoriesList = categories.value ?? [];
 
     return Visibility(

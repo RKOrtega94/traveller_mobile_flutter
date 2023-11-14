@@ -17,7 +17,9 @@ class AppHorizontalListSkeleton extends StatelessWidget {
         physics: const NeverScrollableScrollPhysics(),
         padding: const EdgeInsets.symmetric(horizontal: 10),
         itemBuilder: (context, index) {
-          return const AppLoadingAnimatedCard();
+          return AppLoadingAnimatedCard(
+            itemWidth: itemWidth,
+          );
         },
       ),
     );

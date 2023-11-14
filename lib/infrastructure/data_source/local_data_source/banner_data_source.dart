@@ -5,7 +5,9 @@ class BannerLocalDataSource extends IBannerDataSource {
   List<Map<String, dynamic>> bannerData = banners;
 
   @override
-  Future<List<Map<String, dynamic>>> getBanners() {
+  Future<List<Map<String, dynamic>>> getBanners() async {
+    await Future.delayed(const Duration(seconds: 2));
+
     return Future.value(bannerData);
   }
 }
