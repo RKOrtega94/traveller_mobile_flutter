@@ -8,13 +8,18 @@ class PlacesList extends StatelessWidget {
   Widget build(BuildContext context) {
     return MasonryGridView.count(
       scrollDirection: Axis.vertical,
-      physics: const NeverScrollableScrollPhysics(),
       padding: EdgeInsets.zero,
-      crossAxisCount: 4,
+      crossAxisCount: 2,
       mainAxisSpacing: 4,
       crossAxisSpacing: 4,
       itemBuilder: (context, index) {
-        return const Text("data");
+        return const Material(
+          elevation: 2,
+          child: SizedBox(
+            height: 250,
+            child: Placeholder(),
+          ),
+        );
       },
     );
   }
