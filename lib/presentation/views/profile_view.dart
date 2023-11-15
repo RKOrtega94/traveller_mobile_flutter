@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:traveller_mobile_flutter/core/constants.dart';
 
-import 'package:traveller_mobile_flutter/presentation/widgets/avatar.dart';
+import 'package:traveller_mobile_flutter/presentation/widgets/shared/avatar.dart';
 import 'package:traveller_mobile_flutter/presentation/widgets/button.dart';
 
 class ProfileView extends StatelessWidget {
