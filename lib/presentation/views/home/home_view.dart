@@ -26,41 +26,26 @@ class HomeView extends StatelessWidget {
               handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
               sliver: const HomePersistentHeader(),
             ),
-            SliverToBoxAdapter(
+            const SliverToBoxAdapter(
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  const AppSection(
+                  AppSection(
                     child: CategoriesListComponent(),
                   ),
-                  const AppSection(
+                  AppSection(
                     child: BannerList(),
                   ),
-                  const SizedBox(height: 10),
-                  const AppSection(
+                  SizedBox(height: 10),
+                  AppSection(
                     title: "Destinos populares en Quito",
                     child: PopularPlaces(),
                   ),
-                  const SizedBox(height: 10),
+                  SizedBox(height: 10),
                   AppSection(
                     title: "Más lugares en Quito",
-                    child: SizedBox(
-                      height: screenHeight,
-                      child: const PlacesList(),
-                    ),
+                    child: PlacesList(),
                   )
-                  /* AppSection(
-                    child: ActivitiesHorizontal(),
-                  ),
-                  AppSection(
-                    title: "Destinos",
-                    child: DestinationsHorizontal(),
-                  ),
-                  AppSection(
-                    title: "Últimos post",
-                    child: LastPost(),
-                  ),
-                  SizedBox(height: 65), */
                 ],
               ),
             ),
