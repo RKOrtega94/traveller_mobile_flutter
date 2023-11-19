@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:traveller_mobile_flutter/core/constants.dart';
 import 'package:traveller_mobile_flutter/data/models/place.dart';
 import 'package:traveller_mobile_flutter/presentation/view_models/app_card_view_model.dart';
 import 'package:traveller_mobile_flutter/presentation/widgets/card.dart';
@@ -19,13 +20,9 @@ class PlaceCard extends StatelessWidget {
               Positioned.fill(
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(10),
-                  child: Image.network(
-                    place.images[0],
-                    errorBuilder: (context, error, stackTrace) => Center(
-                      child: Container(
-                        color: Colors.grey,
-                      ),
-                    ),
+                  child: FadeInImage.assetNetwork(
+                    placeholder: '$baseImagePath/no-image.jpg',
+                    image: place.images[0],
                     fit: BoxFit.cover,
                   ),
                 ),

@@ -19,17 +19,14 @@ class PlacesList extends ConsumerWidget {
         physics: const NeverScrollableScrollPhysics(),
         padding: EdgeInsets.zero,
         crossAxisCount: 2,
-        mainAxisSpacing: 20,
-        crossAxisSpacing: 20,
+        mainAxisSpacing: 10,
+        crossAxisSpacing: 10,
         itemCount: places.value!.length,
         itemBuilder: (context, index) {
-          return Material(
-            elevation: 2,
-            child: SizedBox(
-              height: 250,
-              child: PlaceCard(
-                place: places.value![index],
-              ),
+          return SizedBox(
+            height: 250,
+            child: PlaceCard(
+              place: places.value![index],
             ),
           );
         },
