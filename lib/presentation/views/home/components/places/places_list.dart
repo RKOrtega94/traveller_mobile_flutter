@@ -21,7 +21,7 @@ class PlacesList extends ConsumerWidget {
         crossAxisCount: 2,
         mainAxisSpacing: 10,
         crossAxisSpacing: 10,
-        itemCount: places.value!.length,
+        itemCount: places.value?.length ?? 0,
         itemBuilder: (context, index) {
           return SizedBox(
             height: 250,

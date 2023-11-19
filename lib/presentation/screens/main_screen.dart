@@ -7,6 +7,7 @@ import 'package:traveller_mobile_flutter/presentation/views/home/home_view.dart'
 import 'package:traveller_mobile_flutter/presentation/views/map/map_view.dart';
 
 class MainScreen extends ConsumerWidget {
+  static String get routeName => "/main";
   const MainScreen({
     super.key,
   });

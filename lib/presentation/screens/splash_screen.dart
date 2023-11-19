@@ -6,6 +6,7 @@ import 'package:traveller_mobile_flutter/presentation/provider/_app_providers.da
 import 'package:traveller_mobile_flutter/presentation/screens/main_screen.dart';
 
 class SplashScreen extends ConsumerStatefulWidget {
+  static String get routeName => "/";
   const SplashScreen({super.key});
 
   @override
