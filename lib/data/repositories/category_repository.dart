@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:traveller_mobile_flutter/domain/data_source/category_data_source.dart';
 import 'package:traveller_mobile_flutter/domain/repositories/category_repository.dart';
-import 'package:traveller_mobile_flutter/infrastructure/models/category.dart';
+import 'package:traveller_mobile_flutter/data/models/category.dart';
 
 class CategoryRepository extends ICategoryRepository {
   final ICategoryDataSource dataSource;

@@ -1,5 +1,5 @@
 import 'package:traveller_mobile_flutter/domain/data_source/place_data_source.dart';
-import 'package:traveller_mobile_flutter/infrastructure/static/places.dart';
+import 'package:traveller_mobile_flutter/data/static/places.dart';
 
 class PlaceLocalDataSource extends IPlaceDataSource {
   List<Map<String, dynamic>> placeData = places;

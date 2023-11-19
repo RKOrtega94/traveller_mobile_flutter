@@ -1,5 +1,5 @@
-import 'package:traveller_mobile_flutter/infrastructure/models/banner.dart';
-import 'package:traveller_mobile_flutter/infrastructure/repositories/banner_repository.dart';
+import 'package:traveller_mobile_flutter/data/models/banner.dart';
+import 'package:traveller_mobile_flutter/data/repositories/banner_repository.dart';
 
 class GetAllBannersUseCase {
   final BannerRepository _bannerRepository;

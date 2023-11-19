@@ -1,6 +1,6 @@
 import 'package:traveller_mobile_flutter/domain/models/destination_model.dart';
 import 'package:traveller_mobile_flutter/domain/repositories/destination_repository.dart';
-import 'package:traveller_mobile_flutter/infrastructure/data_source/remote_data_source/destination_remote_data_source.dart';
+import 'package:traveller_mobile_flutter/data/data_source/remote_data_source/destination_remote_data_source.dart';
 
 class DestinationRepositoryImpl implements DestinationRepository {
   final _remoteDataSource = DestinationRemoteDataSource();

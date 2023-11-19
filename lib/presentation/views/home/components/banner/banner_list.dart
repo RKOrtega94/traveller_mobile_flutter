@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:traveller_mobile_flutter/infrastructure/models/banner.dart';
+import 'package:traveller_mobile_flutter/data/models/banner.dart';
 import 'package:traveller_mobile_flutter/presentation/components/skeletons/loading_animated_card.dart';
 import 'package:traveller_mobile_flutter/presentation/provider/banner_provider.dart';
-import 'package:traveller_mobile_flutter/presentation/views/home/components/banner/banner_page_view.dart';
+import 'package:traveller_mobile_flutter/presentation/widgets/banner/banner_swiper.dart';
 
 class BannerList extends ConsumerWidget {
   const BannerList({super.key});
@@ -21,18 +21,14 @@ class BannerList extends ConsumerWidget {
 
     return Visibility(
       visible: banners.value?.isNotEmpty ?? false,
-      child: Container(
+      child: SizedBox(
         width: MediaQuery.of(context).size.width,
-        padding: const EdgeInsets.symmetric(horizontal: 10.0),
         child: LayoutBuilder(
           builder: (context, constraints) => SizedBox(
             width: constraints.maxWidth,
             height: constraints.maxWidth * 0.5,
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(10),
-              child: BannerPageView(
-                banners: banners.value ?? [],
-              ),
+            child: BannerSwiper(
+              banners: banners.value ?? [],
             ),
           ),
         ),

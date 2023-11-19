@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "449737903657",
+    "project_id": "travellersec",
+    "storage_bucket": "travellersec.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:449737903657:android:2a5b85c1f4fd6edd7ed638",
+        "android_client_info": {
+          "package_name": "com.rkosysdev.traveller.traveller_mobile_flutter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtztKAE_NAMXLF3tgvV896lAPrMNA3BHY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

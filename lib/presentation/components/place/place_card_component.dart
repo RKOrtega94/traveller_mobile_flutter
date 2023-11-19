@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:traveller_mobile_flutter/infrastructure/models/place.dart';
+import 'package:traveller_mobile_flutter/data/models/place.dart';
 import 'package:traveller_mobile_flutter/presentation/view_models/app_card_view_model.dart';
 import 'package:traveller_mobile_flutter/presentation/widgets/card.dart';
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:traveller_mobile_flutter/infrastructure/models/place.dart';
+import 'package:traveller_mobile_flutter/data/models/place.dart';
 import 'package:traveller_mobile_flutter/presentation/components/place/place_card_component.dart';
 import 'package:traveller_mobile_flutter/presentation/components/skeletons/horizontal_list_skeleton.dart';
 import 'package:traveller_mobile_flutter/presentation/provider/_app_providers.dart';

@@ -1,5 +1,5 @@
 import 'package:traveller_mobile_flutter/domain/data_source/category_data_source.dart';
-import 'package:traveller_mobile_flutter/infrastructure/static/categories_list.dart';
+import 'package:traveller_mobile_flutter/data/static/categories_list.dart';
 
 class CategoryLocalDataSource extends ICategoryDataSource {
   List<Map<String, dynamic>> categoryData = categories;

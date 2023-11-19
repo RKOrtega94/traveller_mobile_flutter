@@ -1,8 +1,8 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:traveller_mobile_flutter/infrastructure/data_source/local_data_source/category_local_data_source.dart';
-import 'package:traveller_mobile_flutter/infrastructure/models/category.dart';
-import 'package:traveller_mobile_flutter/infrastructure/repositories/category_repository.dart';
-import 'package:traveller_mobile_flutter/infrastructure/use_cases/category/get_all_use_case.dart';
+import 'package:traveller_mobile_flutter/data/data_source/local_data_source/category_local_data_source.dart';
+import 'package:traveller_mobile_flutter/data/models/category.dart';
+import 'package:traveller_mobile_flutter/data/repositories/category_repository.dart';
+import 'package:traveller_mobile_flutter/data/use_cases/category/get_all_use_case.dart';
 
 part 'category_provider.g.dart';
 
