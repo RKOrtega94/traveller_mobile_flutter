@@ -1,6 +1,6 @@
 import 'package:go_router/go_router.dart';
-import 'package:traveller_mobile_flutter/presentation/screens/main_screen.dart';
-import 'package:traveller_mobile_flutter/presentation/screens/splash_screen.dart';
+
+import '../screens/_screen.dart';
 
 final router = GoRouter(
   initialLocation: "/",
@@ -12,6 +12,17 @@ final router = GoRouter(
     GoRoute(
       path: MainScreen.routeName,
       builder: (_, state) => const MainScreen(),
+    ),
+    GoRoute(
+      path: CategoryScreen.routeName,
+      builder: (_, state) => const CategoryScreen(),
+    ),
+    GoRoute(
+      path: "${CategoryScreen.routeName}/:id",
+      builder: (_, state) {
+        final id = state.pathParameters["id"];
+        return CategoryScreen(id: id);
+      },
     ),
   ],
 );

@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:traveller_mobile_flutter/presentation/view_models/app_card_view_model.dart';
 
 class AppCard extends StatelessWidget {
-  final AppCardViewModel card;
-  const AppCard({super.key, required this.card});
+  final Widget child;
+  const AppCard({super.key, required this.child});
 
   double getWidth(BuildContext context) {
-    if (card.width != null) return card.width!;
+    // if (card.width != null) return card.width!;
 
     if (MediaQuery.of(context).size.width == double.infinity) {
       return 150;
@@ -18,17 +17,17 @@ class AppCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: card.elevation ?? 2,
+      elevation: 2,
       color: Theme.of(context).cardColor,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
       ),
       child: SizedBox(
         width: getWidth(context),
-        height: card.height ?? double.infinity,
+        height: double.infinity,
         child: Align(
           alignment: Alignment.centerLeft,
-          child: card.child,
+          child: child,
         ),
       ),
     );

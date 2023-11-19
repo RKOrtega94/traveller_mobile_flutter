@@ -5,7 +5,6 @@ import 'package:traveller_mobile_flutter/data/models/category.dart';
 import 'package:traveller_mobile_flutter/presentation/components/category/category_card.dart';
 import 'package:traveller_mobile_flutter/presentation/components/skeletons/horizontal_list_skeleton.dart';
 import 'package:traveller_mobile_flutter/presentation/provider/category_provider.dart';
-import 'package:traveller_mobile_flutter/presentation/view_models/category_card_view_model.dart';
 
 class CategoriesListComponent extends ConsumerWidget {
   const CategoriesListComponent({super.key});
@@ -36,11 +35,11 @@ class CategoriesListComponent extends ConsumerWidget {
           padding: const EdgeInsets.symmetric(horizontal: 10),
           children: categoriesList
               .map(
-                (category) => CategoryCard(
-                  key: ValueKey(category.id),
-                  viewModel: CategoryCardViewModel(
+                (category) => Container(
+                  margin: const EdgeInsets.only(right: 10),
+                  child: CategoryCard(
+                    key: ValueKey(category.id),
                     category: category,
-                    onTap: () => context.go("/category/${category.id}"),
                   ),
                 ),
               )
