@@ -11,9 +11,11 @@ class CategoryScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const AppPageLayout(
-        child: Center(
-      child: Text('Category Screen'),
+    return AppPageLayout(
+        child: SafeArea(
+      child: Column(
+        children: [],
+      ),
     ));
   }
 }
