@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import 'package:traveller_mobile_flutter/data/models/category.dart';
 import 'package:traveller_mobile_flutter/presentation/components/category/category_card.dart';
 import 'package:traveller_mobile_flutter/presentation/components/skeletons/horizontal_list_skeleton.dart';
@@ -25,7 +26,7 @@ class CategoriesListComponent extends ConsumerWidget {
     return Visibility(
       visible: categoriesList.isNotEmpty,
       replacement: const Center(
-        child: Text("No hay categorias"),
+        child: Text("No hay categorías"),
       ),
       child: SizedBox(
         width: MediaQuery.of(context).size.width,
@@ -39,7 +40,7 @@ class CategoriesListComponent extends ConsumerWidget {
                   key: ValueKey(category.id),
                   viewModel: CategoryCardViewModel(
                     category: category,
-                    onTap: () {},
+                    onTap: () => context.go("/category/${category.id}"),
                   ),
                 ),
               )
