@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:go_router/go_router.dart';
 import 'package:traveller_mobile_flutter/data/models/category.dart';
 import 'package:traveller_mobile_flutter/presentation/components/category/category_card.dart';
 import 'package:traveller_mobile_flutter/presentation/components/skeletons/horizontal_list_skeleton.dart';

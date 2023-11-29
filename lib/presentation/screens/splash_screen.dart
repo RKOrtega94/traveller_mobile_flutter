@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:traveller_mobile_flutter/presentation/provider/_app_providers.dart';
-import 'package:traveller_mobile_flutter/presentation/screens/main_screen.dart';
 
 class SplashScreen extends ConsumerStatefulWidget {
   static String get routeName => "/";
